@@ -1,0 +1,19 @@
+.header {
+  height: 52px;
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      a {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        text-decoration: none;
+        padding: 0 20px;
+        font-size: 14px;
+        color: #117cad;
+      }
+    }
+  }
+}
