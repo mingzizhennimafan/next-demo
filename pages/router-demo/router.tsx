@@ -1,8 +1,8 @@
 import { useRouter } from "next/router"
 import styled from "styled-components"
 
-import Page from "../../components/Page"
-import Button from "../../components/Button";
+import Page from "@/components/Page"
+import Button from "@/components/Button";
 
 const RouterList = styled.div`
     

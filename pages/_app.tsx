@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
-import Layout from '../components/layout'
-import '../styles/globals.css'
+import Layout from '@/components/Layout'
+import '@/styles/globals.css'
 
 // export function reportWebVitals(metric: NextWebVitalsMetric) {
 //   console.log(metric)

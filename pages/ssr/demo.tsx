@@ -1,23 +1,31 @@
 import React from "react"
-import { GetServerSideProps, GetServerSidePropsContext } from "next"
+import _ from "lodash"
+import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from "next"
 
-import Page from "../../components/Page";
+import Page from "@/components/Page";
 
-export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+type SSRDemoProps = {
+    renderUid: string
+}
+
+export const getServerSideProps: GetServerSideProps<SSRDemoProps> = async (context: GetServerSidePropsContext) => {
     // ...
-    console.log('re-get-something');
+    const renderUid = _.uniqueId('render')
 
     return {
-        props: {}
+        props: {
+            renderUid,
+        }
     }
 }
 
-const SSRDemoPage: React.FC = () => {
-    console.log('re-render');
-
+const SSRDemoPage: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ renderUid }) => {
     // Render
     return (
-        <Page className="">SSR demo</Page>
+        <Page className="">
+            <h1>SSR demo</h1>
+            <div>render tag <span>{renderUid}</span></div>
+        </Page>
     )
 }
 

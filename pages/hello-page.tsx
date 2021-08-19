@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import Page from '../components/Page'
+import Page from '@/components/Page'
 
 interface Props {
     userAgent?: string;

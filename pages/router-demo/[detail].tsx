@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 
-import Button from "../../components/Button"
-import Page from "../../components/Page"
+import Button from "@/components/Button"
+import Page from "@/components/Page"
 
 const Detail = () => {
     const router = useRouter()
