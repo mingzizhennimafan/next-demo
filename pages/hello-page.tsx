@@ -16,9 +16,9 @@ const HelloPage: NextPage<Props> = ({ userAgent }) => (
     </Page>
 )
 
-HelloPage.getInitialProps = async ({ req }) => {
-    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
-    return { userAgent }
-}
+// HelloPage.getInitialProps = async ({ req }) => {
+//     const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+//     return { userAgent }
+// }
 
 export default HelloPage

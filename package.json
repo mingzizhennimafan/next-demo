@@ -6,7 +6,8 @@
     "dev": "set PORT=3007 && cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "set PORT=3007 && cross-env next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "cors": "^2.8.5",
