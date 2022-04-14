@@ -35,9 +35,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: main
-        if: ${{ ${GITHUB_REF##*/} == main }}
-        run:
-          echo 111
+        run: |
+          if [ ${GITHUB_REF##*/} == main ]
+          then
+            echo 111
+          fi
           echo 222
 
       # Runs a set of commands using the runners shell
