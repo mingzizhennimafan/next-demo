@@ -34,8 +34,9 @@ jobs:
 #           rc-wording:     'RELEASE,alpha'
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: main
         if: ${{ ${GITHUB_REF##*/} == main }}
+        run:
           echo 111
           echo 222
 
