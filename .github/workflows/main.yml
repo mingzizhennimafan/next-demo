@@ -20,6 +20,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - env:
+          branch: ${GITHUB_REF##*/}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name:  'Automated Version Bump'
@@ -36,7 +38,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          branch=${GITHUB_REF##*/}
           echo ${GITHUB_REF##*/}
           echo ${branch} branch
           
