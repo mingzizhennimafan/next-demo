@@ -1,6 +1,6 @@
 {
   "name": "next-demo",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "dev": "set PORT=3007 && cross-env NODE_OPTIONS='--inspect' next dev",
