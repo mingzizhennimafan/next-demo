@@ -3,17 +3,50 @@ import styled from "styled-components"
 
 import Page from "@/components/Page"
 import Button from "@/components/Button";
+import React from "react";
 
 const RouterList = styled.div`
     
 `;
 
+const initDatabase = async () => {
+    console.log(111)
+
+  }
+  
+  const sleep = async (time = 0): Promise<void> => {
+    await new Promise((resolve) => {
+      setTimeout(function () {
+        resolve(null)
+      }, time)
+    })
+  }
+  
+  const retry = async () => {
+    let retryTimes = 5
+    let initDatabaseSuccess = false
+
+    // 重试连接
+    while (retryTimes > 0 && !initDatabaseSuccess) {
+      try {
+        await initDatabase()
+        initDatabaseSuccess = true
+      } catch (error) {
+        console.log(error)
+        // 3s 后重试
+        await sleep(3000)
+        console.log("Try to reconnect!")
+        retryTimes -= 1
+      }
+    }
+  }
+
 const Router = () => {
     const router = useRouter()
     const handleClick = (id: string) => {
-        router.push(`/router-demo/${id}`)
+        retry()
     }
-
+    
     return (
         <Page>
             <h1>Router page</h1>

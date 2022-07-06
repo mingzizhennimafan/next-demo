@@ -42,8 +42,11 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async (context: Ge
     }
 }
 
-const StaticRouterPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ data }) => {
+const StaticRouterPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ data, ...rest }) => {
     const router = useRouter()
+    console.log(rest);
+    console.log(router);
+    
     // Render
     return (
         <Page className="">

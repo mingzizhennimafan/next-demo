@@ -1,9 +1,14 @@
+import React from 'react'
 import Head from 'next/head'
 
 import Page from '@/components/Page'
 import styles from '@/styles/Home.module.css'
 
 export default function Home() {
+  React.useEffect(()=>{
+    console.log(111);
+  }, [])
+
   return (
     <Page className={styles.container}>
       <Head>
